@@ -1,0 +1,194 @@
+ 
+Log File 
+ 
+User : johl 
+04/11/2020 Sat 
+08:52 AM
+ 
+Process Ran by johl 
+ 
+ USERNAME              SESSIONNAME         ID    PID  IMAGE
+>johl                  console             14   4768  dgprompt.exe
+>johl                  console             14  31788  tposd.exe
+>johl                  console             14  28668  ccsvchst.exe
+>johl                  console             14  25456  sihost.exe
+>johl                  console             14   3856  svchost.exe
+>johl                  console             14  10376  svchost.exe
+>johl                  console             14  26896  igfxem.exe
+>johl                  console             14  33724  rtftrack.exe
+>johl                  console             14  21428  taskhostw.exe
+>johl                  console             14  28768  thunderbolt.exe
+>johl                  console             14  31160  explorer.exe
+>johl                  console             14  13460  microsoft.no...
+>johl                  console             14  19304  runtimebroke...
+>johl                  console             14  33516  shellexperie...
+>johl                  console             14  28940  tsvncache.exe
+>johl                  console             14  30092  searchui.exe
+>johl                  console             14  12204  runtimebroke...
+>johl                  console             14  18024  runtimebroke...
+>johl                  console             14  32764  skypebackgro...
+>johl                  console             14  29232  ctfmon.exe
+>johl                  console             14   3824  tabtip.exe
+>johl                  console             14   4036  tabtip32.exe
+>johl                  console             14  24520  rundll32.exe
+>johl                  console             14  10212  svchost.exe
+>johl                  console             14  21468  igfxext.exe
+>johl                  console             14    664  scnotificati...
+>johl                  console             14  29792  msascuil.exe
+>johl                  console             14  13868  pangpa.exe
+>johl                  console             14  29476  epepcmonitor...
+>johl                  console             14  26016  toast32.exe
+>johl                  console             14  31432  everything.exe
+>johl                  console             14   2796  rtkugui64.exe
+>johl                  console             14  20016  ercinterface...
+>johl                  console             14   7192  onenotem.exe
+>johl                  console             14  13512  updaterui.exe
+>johl                  console             14  13716  mctray.exe
+>johl                  console             14   2580  jusched.exe
+>johl                  console             14   5328  ravbg64.exe
+>johl                  console             14  24236  ravbg64.exe
+>johl                  console             14  21108  ravcpl64.exe
+>johl                  console             14  17392  notepad++.exe
+>johl                  console             14   9668  chrome.exe
+>johl                  console             14  26112  chrome.exe
+>johl                  console             14   4644  chrome.exe
+>johl                  console             14  30420  chrome.exe
+>johl                  console             14  33136  chrome.exe
+>johl                  console             14  32996  runtimebroke...
+>johl                  console             14  15536  chrome.exe
+>johl                  console             14   6804  lenovo.moder...
+>johl                  console             14  13284  lenovo.moder...
+>johl                  console             14  24160  lenovo.moder...
+>johl                  console             14  26420  chrome.exe
+>johl                  console             14  26316  chrome.exe
+>johl                  console             14  30580  chrome.exe
+>johl                  console             14   5904  chrome.exe
+>johl                  console             14  18532  chrome.exe
+>johl                  console             14  18892  chrome.exe
+>johl                  console             14  14872  git-bash.exe
+>johl                  console             14   8156  mintty.exe
+>johl                  console             14  21472  conhost.exe
+>johl                  console             14  27124  bash.exe
+>johl                  console             14  15628  wish.exe
+>johl                  console             14  10332  chrome.exe
+>johl                  console             14   1396  cmd.exe
+>johl                  console             14   4444  conhost.exe
+>johl                  console             14  25768  qprocess.exe
+ 
+Network Activities 
+
+IPv4 Statistics
+
+  Packets Received                   = 19684265
+  Received Header Errors             = 0
+  Received Address Errors            = 2508
+  Datagrams Forwarded                = 14831
+  Unknown Protocols Received         = 1
+  Received Packets Discarded         = 544943
+  Received Packets Delivered         = 20091110
+  Output Requests                    = 14812619
+  Routing Discards                   = 0
+  Discarded Output Packets           = 1789
+  Output Packet No Route             = 1009
+  Reassembly Required                = 188
+  Reassembly Successful              = 94
+  Reassembly Failures                = 0
+  Datagrams Successfully Fragmented  = 0
+  Datagrams Failing Fragmentation    = 0
+  Fragments Created                  = 0
+
+IPv6 Statistics
+
+  Packets Received                   = 723856
+  Received Header Errors             = 0
+  Received Address Errors            = 3417
+  Datagrams Forwarded                = 0
+  Unknown Protocols Received         = 0
+  Received Packets Discarded         = 398911
+  Received Packets Delivered         = 695885
+  Output Requests                    = 753378
+  Routing Discards                   = 0
+  Discarded Output Packets           = 369
+  Output Packet No Route             = 15
+  Reassembly Required                = 1616
+  Reassembly Successful              = 766
+  Reassembly Failures                = 0
+  Datagrams Successfully Fragmented  = 0
+  Datagrams Failing Fragmentation    = 0
+  Fragments Created                  = 0
+
+ICMPv4 Statistics
+
+                            Received    Sent
+  Messages                  12058       16907     
+  Errors                    0           0         
+  Destination Unreachable   10774       15133     
+  Time Exceeded             1133        0         
+  Parameter Problems        0           0         
+  Source Quenches           0           0         
+  Redirects                 0           0         
+  Echo Replies              142         9         
+  Echos                     9           1765      
+  Timestamps                0           0         
+  Timestamp Replies         0           0         
+  Address Masks             0           0         
+  Address Mask Replies      0           0         
+  Router Solicitations      0           0         
+  Router Advertisements     0           0         
+
+ICMPv6 Statistics
+
+                            Received    Sent
+  Messages                  14113       24269     
+  Errors                    0           0         
+  Destination Unreachable   189         9235      
+  Packet Too Big            0           0         
+  Time Exceeded             0           0         
+  Parameter Problems        0           0         
+  Echos                     12          0         
+  Echo Replies              0           0         
+  MLD Queries               0           0         
+  MLD Reports               0           0         
+  MLD Dones                 0           0         
+  Router Solicitations      0           598       
+  Router Advertisements     424         0         
+  Neighbor Solicitations    9325        4817      
+  Neighbor Advertisements   4163        9619      
+  Redirects                 0           0         
+  Router Renumberings       0           0         
+
+TCP Statistics for IPv4
+
+  Active Opens                        = 116694
+  Passive Opens                       = 34819
+  Failed Connection Attempts          = 39081
+  Reset Connections                   = 27706
+  Current Connections                 = 17
+  Segments Received                   = 22419208
+  Segments Sent                       = 15013377
+  Segments Retransmitted              = 61276
+
+TCP Statistics for IPv6
+
+  Active Opens                        = 13430
+  Passive Opens                       = 81
+  Failed Connection Attempts          = 9386
+  Reset Connections                   = 1402
+  Current Connections                 = 1
+  Segments Received                   = 152355
+  Segments Sent                       = 147877
+  Segments Retransmitted              = 5833
+
+UDP Statistics for IPv4
+
+  Datagrams Received    = 5323303
+  No Ports              = 607210
+  Receive Errors        = 0
+  Datagrams Sent        = 2090876
+
+UDP Statistics for IPv6
+
+  Datagrams Received    = 439030
+  No Ports              = 398904
+  Receive Errors        = 0
+  Datagrams Sent        = 509509
