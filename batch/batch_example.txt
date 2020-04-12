@@ -1,1 +1,1333 @@
 http://www.trytoprogram.com/batch-file
+
+So here are the few things that must be implemented and few things that must be avoided while coding.
+
+DOs
+
+Documenting code with comments
+Perhaps this is one of the most important one because without proper documentation it becomes tedious to maintain the code and debug it .
+So it is always a good idea to insert comments in programs or codes, explaining what the next lines or block of code is trying to accomplish, how and why.
+Either REM or : : is used for comments in batch file programming. Here is the example.
+REM This is first comment
+::  This is another comment
+Validating input
+As simple as it is to code batch files, so is to hack and tweak the code because everything is like plain English in batch programs. Batch files are weakly typed, so it is always a better approach to validate all the inputs in batch file programming.
+Check variables before using them
+Always check the new variable before using them or initializing them because they might already have been defined.
+Indentation
+Without proper indentation, a program becomes confusing to intercept. So always use proper indentation in every line of code for better understanding of the code.
+DON’Ts
+
+If there are few things to be considered for better programming practice, there are also certain things that must be avoided. Here are the few things that you as a programmer should try to avoid while coding.
+
+Avoid one-liner codes (multiple command lines joined into a single one by ANDs and ORs) and use a block of code.
+Avoid nested block codes (nested if else) and use subroutines instead.
+Don’t use variable names as command names
+Some final words of advice before you start playing around batch commands
+Now that you have known about the batch files, in the coming tutorials, you will learn about advanced concepts in batch file programming.
+
+But we should warn you that, batch file commands and scripts are too much powerful and if used without proper knowledge, it can crash your machine and software’s functionalities. Make sure you know what you are doing because with batch scripts we are playing with the core feature of Windows.
+
+
+@echo off
+echo This is my first script
+pause
+
+REM This is first comment
+::  This is another comment
+
+
+
+===== 
+List of batch file commands
+ASSOC	ATTRIB	CD	CHKDSK	CHOICE
+CLS	CMD	COMP	CONVERT	COPY
+DATE	DEL	DIR	DISKPART	DRIVERQUERY
+ECHO	EXIT	EXPAND	FC	FIND
+FORMAT	HELP	IPCONFIG	LABEL	MD
+MORE	MOVE	NET	PAUSE	PING
+RD	REM	REN	SET	SHUTDOWN
+SORT	START	SYSTEMINFO	TASKKILL	TASKLIST
+TIME	TITLE	TREE	TYPE	VER
+VOL	XCOPY
+
+=====
+
+ASSOC
+The batch command ASSOC associates a file extension with a file type, or list all associations.
+
+Example
+
+@echo OFF
+ASSOC | find ".txt"
+pause
+Output
+
+.txt = textfile
+
+As shown in above output, it displays the file association for .txt extension.
+
+If only ASSOC is written and executed, it will display all the file associations for every extension, instead of just .txt extension.
+
+click here to go back to list of commands
+
+ATTRIB
+The batch command ATTRIB is used to display the file attributes or set an attribute to a file in the working directory.
+
+Example
+
+Now let us suppose we have a file note.txt in our working directory. We will display its file attributes and then make it hidden and read only by adding 'ah' and 'r' attributes to it. And finally, we will remove some attributes we added as well.
+
+@echo OFF
+:: To display attribute of note.txt
+ATTRIB note.txt
+
+:: To make it read only by adding 'r'
+ATTRIB +r note.txt
+ATTRIB note.txt
+
+:: To make it hidden by adding 'ah'
+ATTRIB +ah note.txt
+ATTRIB note.txt
+
+:: To remove attribute read only
+ATTRIB -r note.txt
+ATTRIB note.txt
+Output
+
+A        note.txt
+A  R     note.txt
+A  R  AH note.txt
+A     AH note.txt
+Here in this output, A means Archived, R means Read only and AH means Hidden file.
+
+The batch command CD helps in navigating through different directories and changing directories or displaying current directory.
+
+Example
+
+@echo OFF
+:: CD without any parameters displays the current working directory
+CD
+:: Changing to the parent directory one level up
+CD..
+CD
+:: Changing the path to Programs
+CD\Programs
+CD
+pause
+Output
+
+C:\Users\abc
+C:\Users
+C:\Programs
+click here to go back to list of commands
+
+CHKDSK
+The batch command CHKDSK is used for checking error in the disk.
+
+Example
+
+@echo OFF
+CHKDSK
+click here to go back to list of commands
+
+CHOICE
+The batch command CHOICE provides a list of options to the user.
+
+Example
+
+@echo OFF
+ECHO You want coffee?
+ECHO Enter Y for yes
+ECHO Enter N for no
+CHOICE /c YN /m "Yes or No"
+Output
+
+Now that script will produce following output.
+
+You want coffee?
+Enter Y for yes
+Enter N for no
+Yes or No [Y,N]?
+Now the console waits for your input and once you enter your answer it will terminate.
+
+click here to go back to list of commands
+
+CLS
+The batch command CLS clears the screen.
+
+Example
+
+@echo OFF
+CLS
+pause
+This command just clears all the logs in command prompt screen.
+
+click here to go back to list of commands
+
+CMD
+The batch command CMD invokes a new command prompt window.
+
+Example
+
+@echo OFF
+CMD
+click here to go back to list of commands
+
+COMP
+The batch command COMP compares the size of two files and checks if they are different in size.
+
+Example
+
+@echo OFF
+COMP C:\abc.txt C:\xyz.txt
+click here to go back to list of commands
+
+CONVERT
+The batch command CONVERTS the volumes or drives from one format to another i.e from FAT to NTFS.
+
+Example
+
+@echo OFF
+CONVERT D:\
+click here to go back to list of commands
+
+COPY
+The batch command COPY is used for copying files from one location to another.
+
+Example
+
+@echo OFF
+:: For copying from one drive to another -xyz.txt from D:\ to E:\
+COPY D:\xyz.txt E:\
+
+:: If file has whitepace between name - use double quote
+COPY "D:\my file.txt" E:\
+click here to go back to list of commands
+
+DATE
+The batch command DATE displays the current date in the system.
+
+Example
+
+@echo OFF
+echo %DATE%
+Output
+
+Fri 07/07/2017
+This command DATE displays system date in command prompt as shown above.
+
+click here to go back to list of commands
+
+DEL
+The batch command DEL is used for deleting files.
+
+Example
+
+@echo OFF
+:: To delete a single file xyz.txt
+DEL D:\xyz.txt
+
+:: To delete all the files of .txt extensions and ask for confirmation before deleting
+DEL /p/s D:\*.txt
+
+:: Remove \p to delete without confirmation
+DEL /s D:\*.txt
+Note: DEL command only deletes files, not directories.
+
+click here to go back to list of commands
+
+DIR
+The batch command DIR lists all the contents of directories.
+
+Example
+
+@echo OFF
+:: To list all the contents  of current directory
+DIR
+
+:: To list all the hidden files of working directory
+DIR /ah
+
+:: To list all files with .php extensions
+DIR *.php
+DISKPART
+The batch command DISKPART shows the properties of a disk partition.
+
+Example
+
+@echo OFF
+DISKPART
+This script will ask for users permission to check the properties of disk partition and if allowed, will display following output in the console depending on disk properties.
+
+batch command diskpart
+
+click here to go back to list of commands
+
+DRIVERQUERY
+The batch command DRIVERQUERY displays all the drivers installed and their properties.
+
+Example
+
+@echo OFF
+DRIVERQUERY
+Output
+
+batch file commands - driverquery
+
+This output shows the fraction of drivers list with their properties and installed date. DRIVERQUERY command shows all the drivers list, which is huge.
+
+click here to go back to list of commands
+
+ECHO
+The batch command ECHO is used for echoing commands on/off and printing message to the console.
+
+Example
+
+@echo OFF
+echo Hello
+Output
+
+Hello
+This command ECHO displays Hello in the console as shown above.
+
+Besides printing message, echo is also used for deciding whether or not to display the command itself. Like in this example as well, in the first line we have turned OFF echo, which makes sure that commands themselves are not printed.
+
+
+ 
+If that echo wasn’t turned off, then the output would have been like:
+
+C:\> echo Hello
+Hello
+click here to go back to list of commands
+
+EXIT
+The batch command EXIT terminates and exits the console.
+
+Example
+
+@echo OFF
+echo HI
+EXIT
+In this example, as soon as HI is printed in the console, EXIT command will terminate the program and close the output console.
+
+click here to go back to list of commands
+
+EXPAND
+The batch command EXPAND extracts the contents of .cab file.
+
+Example
+
+@echo OFF
+EXPAND xyz.cab
+This script will extract all the contents of xyz.cab file to the same location where xyz.cab is located.
+
+click here to go back to list of commands
+
+FC
+The batch command FC finds the difference between the two files and displays them to console.
+
+Example
+
+@echo OFF
+FC D:\a.txt D:\b.txt
+This script will find the difference in the content of both files and list out all of them.
+
+click here to go back to list of commands
+
+FIND
+The batch command FIND search the given file to find the desired string and if located, it displays the corresponding line in which the string exists.
+
+Example
+
+@echo OFF
+FIND "find me" example.txt
+This script will search for the string “find me” in example.txt file and if it exists in example.txt, it will display the corresponding line on the console.
+
+click here to go back to list of commands
+
+FORMAT
+The batch command FORMAT is used for formatting a drive of format FAT 16/32 or NTFS in Windows.
+
+Example
+
+@echo OFF
+FORMAT E:\
+This script will format E drive and overwrite previous contents.
+
+click here to go back to list of commands
+
+HELP
+This might be the one of the most important batch file commands because with this HELP command we can know about all the other commands used in batch file or command prompt.
+
+Example
+
+@echo OFF
+HELP
+Now this will display all the available commands with their functionalities in the console.
+
+batch file command help
+
+Since the list of commands is so much more, we have sliced the list and shown few here.
+
+Now that we have a list of batch file commands, we can also view details of their syntax and functionalities in following way:
+
+
+ 
+@echo OFF
+
+:: Just type help and the command you want to know about
+HELP copy
+Now this will display details of the copy command.
+
+batch file command help copy
+
+As you can see, it HELP COPY displays all the details about COPY command.
+
+click here to go back to list of commands
+
+IPCONFIG
+The batch command IPCONFIG displays Windows IP configuration.
+
+Example
+
+@echo OFF
+IPCONFIG
+This script will generate following output.
+
+batch file command ipconfig
+
+P.S: We have hidden iPV6 address in above output.
+
+click here to go back to list of commands
+
+LABEL
+The batch command LABEL displays the label of a drive or volume and is also is used for adding, setting or removing a disk label.
+
+Example
+
+@echo OFF
+LABEL
+Now this will display the label of your working directory and you can set, remove or add another label.
+
+For example, my working directory is D: and has label ‘apps’. So, it will generate following output:
+
+batch file command label
+
+click here to go back to list of commands
+
+MD
+The batch command MD creates a new directory or folder in the working directory.
+
+Example
+
+@echo OFF
+MD abc
+This program will create a new directory abc in current working location.
+
+click here to go back to list of commands
+
+MORE
+The batch command MORE displays the content of a file one by one.
+
+Example
+
+@echo OFF
+MORE D:\example.txt
+This program will display the contents of example.txt line by line, one at a time.
+
+click here to go back to list of commands
+
+MOVE
+This batch command moves files from one directory to another, rename the directories and move the directories as well.
+
+Example
+
+@echo OFF
+:: To move xyz.txt from dir1 to dir2
+MOVE C:\dir1\xyz.txt C:\dir2
+
+:: To rename directory dir1 to dir2
+MOVE C:\Program\dir1 C:\Program\dir2
+
+:: To move directory dir1 from D:\ to D:\music
+MOVE D:\dir1 D:\music\
+In this way, MOVE command can be used to move files, directories and rename directories.
+
+click here to go back to list of commands
+
+NET
+The batch command NET is used for many network functionalities depending upon the commands used.
+
+Example
+
+To display the users:
+
+@echo OFF
+NET users
+This will generate following output:
+
+batch command net
+
+Like users, there are many other commands:
+
+net accounts
+net computer
+net config
+net continue
+net file
+net group
+net help
+net name
+net pause
+net print
+net send
+net session
+net share
+net start
+net statistics
+net stop
+net time
+net use
+net view
+click here to go back to list of commands
+
+PATH
+The batch command PATH displays the path variable or it can be used to set path variable.
+
+Example
+
+@echo OFF
+ECHO %PATH%
+This program will display the path of the current working directory.
+
+click here to go back to list of commands
+
+PAUSE
+The batch command PAUSE is used for holding the output screen till user enters a variable or a value.
+
+Example
+
+@echo OFF
+ECHO hi
+pause
+This program will print hi in the console and show the message ‘Press any key to continue..’ and wait for the input from the user.
+
+click here to go back to list of commands
+
+PING
+The batch command PING is used for sending ICMP/IP packets to the designated address over the network.
+
+Example
+
+@echo OFF
+PING 127.0.1.1
+Output
+
+This script will send packets to address 127.0.1.1 and output will be displayed as follows:
+
+Pinging 127.0.1.1 with 32 bytes of data:
+Reply from 127.0.1.1: bytes = 32 time<1ms TTL = 128
+Reply from 127.0.1.1: bytes = 32 time<1ms TTL = 128
+
+Ping statistics for 127.0.1.1:
+Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+Minimum = 0ms, Maximum = 0ms, Average = 0ms
+click here to go back to list of commands
+
+RD
+The batch command RD is used for removing the empty directories, directories with contents or files inside cannot be removed with RD command.
+
+Example
+
+@echo OFF
+:: To remove directory xyz from C:\>
+RD C:\xyz
+
+:: To remove multiple directories from working location
+RD dir1 dir2
+click here to go back to list of commands
+
+REM
+The batch command REM signifies comments in the batch script.
+
+Example
+
+@echo OFF
+REM This is a comment
+Anything written after REM is interpreted as a comment and is not executed in batch programs.
+
+click here to go back to list of commands
+
+REN
+The batch command REN is used for renaming files and directories.
+
+Example
+
+@echo OFF
+:: To rename x.php to y.php
+REN C:\x.php C:\y.php
+click here to go back to list of commands
+
+SET
+The batch command SET displays the list of environment variables of the system.
+
+Example
+
+@echo OFF
+SET
+click here to go back to list of commands
+
+SHUTDOWN
+The batch command SHUTDOWN when invoked, shuts down the computer.
+
+Example
+
+@echo OFF
+SHUTDOWN
+click here to go back to list of commands
+
+SORT
+The batch command SORT is used to sort the content of the file alphabetically.
+
+Example
+
+@echo OFF
+SORT D:\example.txt
+This script will sort the content of example.txt alphabetically either in ascending or descending order.
+
+click here to go back to list of commands
+
+START
+The batch command START is used to open a file or start a new program.
+
+Example
+
+@echo OFF
+START paint.exe
+This program will start the application paint if it is in the working location, else you will have to explicitly indicate the path of that program as well.
+
+click here to go back to list of commands
+
+SYSTEMINFO
+The batch command SYSTEMINFO displays all the configuration of the computer and operating system.
+
+Example
+
+@echo OFF
+SYSTEMINFO
+This will generate following output depending upon the computer:
+
+batch command systeminfo
+
+Of course, the details will be much more than this, but please try and look on your PC.
+
+click here to go back to list of commands
+
+TASKKILL
+The batch command TASKKILL is used to terminate a running task
+
+Example
+
+If you were to terminate the notepad running in your PC, then following script is used.
+
+@echo OFF
+TASKKILL /im notepad.exe
+click here to go back to list of commands
+
+TASKLIST
+The batch command TASKLIST lists all the running tasks in the console.
+
+Example
+
+@echo OFF
+TASKLIST
+click here to go back to list of commands
+
+TIME
+The batch command TIME is used to display or set the system time.
+
+Example
+
+@echo OFF
+ECHO %TIME%
+Output
+
+18:01:22:06
+The current time is displayed in the console.
+
+click here to go back to list of commands
+
+TITLE
+The batch command TITLE sets new title for output console.
+
+Example
+
+@echo OFF
+TITLE New Console
+This script will set the title of output console to ‘New Console’. Thus the output console will look like:
+
+batch command title
+
+click here to go back to list of commands
+
+TREE
+The batch command TREE displays the tree diagram of the subdirectories to the last level.
+
+Example
+
+I have a  folder movies. SO, if I were to run TREE in that movie folder, it will create a tree of movies inside that folder and also the subdirectories where there is movie file and subtitle file.
+
+@echo OFF
+TREE D:\movies
+Output
+
+This script will generate following output.
+
+batch command tree
+
+click here to go back to list of commands
+
+TYPE
+The batch command TYPE is used for displaying the content of a file to an output console.
+
+Example
+
+@echo OFF
+TYPE C:\notes.txt
+pause
+This program will display all the contents of notes.txt to the console.
+
+click here to go back to list of commands
+
+VER
+The batch command VER displays the version of Windows or MS-DOS.
+
+Example
+
+@echo OFF
+VER
+pause
+Output
+
+Microsoft Windows [Version 10.0.14393]
+click here to go back to list of commands
+
+VOL
+The batch command VOL displays the current volume label of Windows.
+
+Example
+
+@echo OFF
+VOL
+Output
+
+Microsoft Windows [Version 10.0.14393]
+click here to go back to list of commands
+
+XCOPY
+The batch command XCOPY is similar to COPY command but COPY command copies single file whereas XCOPY command copies entire directories including subdirectories.
+
+Example
+
+@echo OFF
+XCOPY D:\test.txt to E:\
+This script will copy test.txt from D drive to E drive.
+
+click here to go back to list of commands
+
+So, these are the batch file commands along with examples.
+
+We hope you find these batch file commands easy to learn. We will discuss more advanced concepts in next tutorials.
+
+===== 
+
+Batch file variables – Syntax
+Besides some reserved words (these predefined commands should not be used), any word or letter can be used as a variable.
+
+Here is how the batch variables are declared.
+
+SET varibale_name=variable_value
+
+:: for assigning numeric value
+SET /A variable_name=nameric_value
+Note: DOS or Batch commands are not case sensitive and ‘/A’ is used for assigning numeric values. Uninitialized variables are empty strings in batch files.
+
+Batch file variables: Things you must be aware of
+Set command overwrites any existing variables. For example, dynamic variables like %DATE% , %TEMP%, %CD% and others seem so fancy that you ought to use these variables. But note that these dynamic variables act like commands in DOS and overwriting these variables can alter their meanings.
+
+So it’s always better to verify you aren’t using any system variables. But how do verify it?
+
+How to verify if batch variables are defined already?
+Here is how we can check if a variable is defined or not in DOS.
+
+IF DEFINED MyVar (ECHO MyVar IS defined) ELSE (ECHO MyVar is NOT defined)
+Go through our batch files if else tutorial, if you are not familiar with the batch file if-else statements.
+
+Batch file variables – Example
+@echo OFF
+SET name=Apple
+ECHO %name%
+
+:: For numberic variable
+SET a=2
+ECHO %a%
+PAUSE
+
+
+Variable scope in Batch files: Global variables and Local variables
+As the name goes, global variable means a variable that can be accessed from anywhere in the program and local variable is the one that has limited scope or can be accessed from locally defined sections. By default, all the variables in batch file programs are GLOBAL.
+
+Like any other programming language, Batch or DOS programming also has a definition for global and local variables.
+
+As we mentioned, by default all the variables are global in a batch script, but they can be used as the local variable by using SETLOCAL command. Any variable assigned in between SETLOCAL and ENDLOCAL is taken as a local variable and its scope terminates and the variable is destroyed as soon as the ENDLOCAL statement is executed.
+
+Following example will clear the concept of the local and global variable in batch file programming.
+
+Example
+
+@echo oFF
+SET var1=var1 is global variable
+SETLOCAL
+SET var2=var2 is a local variable
+
+ECHO %var1%
+ECHO %var2%
+ENDLOCAL
+PAUSE
+This will generate following output:
+
+batch global variable output
+
+So it works in a cool way.
+
+Now let’s see what happens when we try to use a local variable beyond its scope i.e using after ENDLOCAL.
+
+Example
+
+@echo oFF
+SET var1=var1 is global variable
+SETLOCAL
+SET var2=var2 is a local variable
+
+ECHO %var1%
+ENDLOCAL
+ECHO %var2%
+PAUSE
+In this program, var2 is a local variable and when we try to access it after ENDLOCAL is executed, the following happens.
+
+batch local variable output
+
+So as seen in this output, when we try to use local variable beyond its scope, instead of executing commands with the local variable, the ECHO is turned off.
+
+
+
+====
+Batch file if else statement
+– Syntax
+
+if (condition) dosomething
+
+:: For if..else if
+if (condition) (statement1) else (statement2)
+So, as the syntax signifies, first a condition is checked and if true, the corresponding statements are executed in the batch file if statement. As for batch file if else, first a condition of if statement is checked and if true, the statement1 is executed else statement2 is executed.
+
+Batch File If Else Flowchart
+Here is a flowchart to highlight the concept of if else statement.
+
+batch file if else
+
+Now that we have known about how batch file if else works, let’s go through some examples.
+Batch File If Else Example: Checking Integer Variables And String Variables
+To know in depth and details about batch file variables, go through this article.
+
+SET /A a=2
+SET /A b=3
+SET name1=Aston
+SET name2=Martin
+
+:: Using if statement
+IF %a%==2 echo The value of a is 2
+IF %name2%==Martin echo Hi this is Martin
+
+:: Using if else statements
+IF %a%==%b% (echo Numbers are equal) ELSE (echo Numbers are different)
+IF %name1%==%name2% (echo Name is Same) ELSE (echo Name is different)
+PAUSE
+Now this will generate following output.
+
+batch file if else output
+
+Batch File If Else Example To Check If Variable Is Defined Or Not
+@echo OFF
+
+::If var is not defined SET var = hello
+IF "%var%"=="" (SET var=Hello)
+
+:: This can be done in this way as well
+IF NOT DEFINED var (SET var=Hello)
+Either way, it will set var to 'Hello' as it is not defined previously.
+
+Batch File If Else Example To Check If A File Or Folder Exists
+EXIST command is used to check if a file exists or not. Read this article to know details of EXIST and all the other batch file commands.
+
+@echo OFF
+
+::EXIST command is used to check for existence
+IF EXIST D:\abc.txt ECHO abc.txt found
+IF EXIST D:\xyz.txt (ECHO xyz.txt found) ELSE (ECHO xyz.txt not found)
+
+PAUSE
+Now, let’s assume we have "abc.txt" in D drive and "xyz.txt" doesn’t exist in D: , then it will generate following output.
+
+batch file if exist
+
+So, that’s all about batch file if else statements. We hope you didn’t have a hard time learning about it and hopefully, by this time, you will know how to use if else in batch file scripting.
+
+
+
+
+====For LOOP
+
+Looping basically means going through something continuously until some condition is satisfied.
+
+In batch files, there is the direct implementation of for loop only. There does not exist while and do while loops as in other programming languages.
+
+Batch File For Loop Syntax
+FOR %%var_name IN list DO example_code
+Here, the list is the values for which for loop will be executed. One thing to be noticed in batch file for loops is that, variable declaration is done with %%var_name instead of %var_name%.
+
+Let’s take an example for illustrating batch file for loop.
+
+Batch file for loop example
+@echo OFF
+FOR %%x IN (1 2 3) DO ECHO %%x
+PAUSE
+Here in this program, we have 1, 2 and 3 in the list. So, for every element of the list the for loop will be executed and following output is generated.
+
+batch file for loop
+
+Now that we know about the simple implementation of for loop, let’s implement for loop to next level.
+
+ 
+
+ 
+Batch file for loop – looping through a range of values
+In batch file programming, for loop can also be implemented through a range of values. Following is the syntax for implementing for loop through a range of values in the batch file.
+
+FOR /L %%var_name IN (Lowerlimit, Increment, Upperlimit) Do some_code
+Where,
+
+/L signifies that for loop is used for iterating through a range of values
+Lower limit is the value from which loop will start until it reaches the Upper limit and the increment is the value with which lower limit will be increased during each iteration
+The following example will highlight its concept in more details.
+
+@echo OFF
+FOR /L %%y IN (0, 1, 3) DO ECHO %%y
+PAUSE
+Now, this program will go through range 0 to 3, incrementing the value by 1 in each iteration.
+
+Output
+
+batch file for loop range
+
+Batch file for loop – looping through files
+So far in for loop, we have used ‘%%’ followed by a single letter. But to loop through files using for loop, we have to use ‘%’ followed by a single letter like %y.
+
+So here is the syntax or perhaps an example of for loop for looping through files in particular location.
+
+FOR %y IN (D:\movie\*) DO @ECHO %y
+This will go through all the files in movie folder of D: and display the files in output console.
+
+Batch file for loop – looping through directories
+For looping through directories, ‘/D/ is used. It is illustrated in the following example.
+
+FOR /D %y IN (D:\movie\*) DO @ECHO %y
+Now this will go through even the sub-directories inside movie folder if there exist any.
+
+So, this is all about the batch file for loops. Please practice every piece of code on your local machine for effective learning.
+
+=== 
+Batch file return code – Introduction
+So, a return code is a code returned after the execution of a program. By default, the command line execution should return zero when execution succeeds and non-zero when execution fails. When execution fails, the returned non-zero value indicates the corresponding error number and user can go through that error to resolve it.
+
+These returned error codes are also called exit codes. Almost all application or utilities return the exit code when they are complete or they terminate.
+
+Following are some of the non-zero numbers (exit codes) returned from programs with their corresponding errors.
+
+Exit Code/Error Code	Details/Description
+0	Program successfully executed.
+1	Incorrect function. Indicates that Action has attempted to execute non-recognized command in Windows command prompt cmd.exe.
+2	Indicates that the system cannot find the file in that specified location.
+3	Indicates that the system cannot find the specified path.
+5	Access is denied. So the user has no access right to specified resource.
+9009
+0x2331	Program is not recognized as an internal or external command, operable program or batch file. Indicates that command, application name or path has been misspelled when configuring the Action.
+3221225477
+0xC0000005
+-1073741819	Access violation.
+Indicates that the executed program has terminated abnormally or crashed.
+3221225495
+0xC0000017
+-1073741801	Not enough virtual memory is available.
+Indicates that Windows has run out of memory.
+3221225786
+0xC000013A
+-1073741510	The application terminated as a result of a CTRL+C. Indicates that the application has been terminated either by user’s keyboard input CTRL+C or CTRL+Break or closing command prompt window.
+3221225794
+0xC0000142
+-1073741502	The application failed to initialize properly. Indicates that the application has been launched on a Desktop to which current user has no access rights. Another possible cause is that either gdi32.dll or user32.dll has failed to initialize.
+221225495
+0xC0000017
+-1073741801	Not enough virtual memory is available.
+It indicates that Windows has run out of memory.
+
+3221226505
+0xC0000409
+-1073740791	Stack buffer overflow / overrun. Error can indicate a bug in the executed software that causes stack overflow, leading to abnormal termination of the software.
+3762507597
+0xE0434F4D
+-532459699	Unhandled exception in .NET application. More details may be available in Windows Event log.
+Now that we know about exit codes, the next thing is to know or check the return codes in our script commands. For that, environment variable %ERRORLEVEL% is used.
+
+Error Level In Batch File
+The environmental variable %ERRORLEVEL% contains the return code or the latest error level in the batch file, which is the latest error codes from the last command executed.
+
+A common way of checking Error levels using %ERRORLEVEL% variable is:
+
+IF %ERRORLEVEL% NEQ 0 Echo An error was found
+IF %ERRORLEVEL% EQU 0 Echo No error found
+Besides this, the command EXIT /B %ERRORLEVEL% at the end of the batch file also returns the error codes from the batch file.
+
+EXIT /B < exitcodes > is used to return custom return codes.
+
+Batch file return code example
+Here is a simple example to illustrate how to check error codes in a batch file.
+
+IF EXIST D:/abc.txt EXIT 9
+EXIT 0
+So, basically what this script does is, it checks D: for file abc.txt. If the file exist, it will return error code zero and terminate and if the file abc.txt doesn’t exist in D: , then it will return error code 9 and terminate.
+
+== Functions 
+
+Batch file functions: Introduction
+A function is a single comprehensive unit (self-contained block) containing a block of code that performs a specific task. The function performs the same task when called which avoids the need of rewriting the same code again and again.
+
+Like in any other programming language, batch file functions also have:
+
+function definition
+function call
+NOTE: When defining the main program is to ensure that the statement EXIT /B %ERRORLEVEL% is used in the main program to separate the code of the main program from the function.
+
+Batch File Function Definition
+-Syntax
+
+:function_name 
+Some_Operational_Code 
+EXIT /B 0
+As shown in syntax, a function definition in batch file starts with the declaration of a function with a label. Next is the body of function where we write codes to achieve a certain task. At the end  EXIT /B 0 is to ensure successful termination or proper exit of the functions.
+
+Batch File Functions Call
+Like in every other programming language, to use the defined functions, we need to call it in the main program. For this, CALL command is used.
+
+Learn more details about all batch file commands here.
+
+-Syntax
+
+:: To call function without parameters 
+CALL :function_name
+ 
+:: To call function with parameters
+CALL :function_name param1, param2,...,paramN
+
+:: To call function with return values
+CALL :function_name return_value1,return_value2,..,return_valueN
+So, this is how the function is called in batch files.
+
+In the case of batch file functions with parameters, a tilde(~) sign is used to access them in the main program along with the positional number of parameter.
+
+Similarly, in the case of batch file functions with return values, return values are set in the function using the set command and the tilde(~) character along with the positional number of the return values.
+
+Here is the batch file program to demonstrate the use of the basic function, function with parameters and function with return values.
+
+ 
+
+ 
+Batch file function example: Program with basic function
+@echo OFF
+CALL :basic_function 
+EXIT /B %ERRORLEVEL% 
+:basic_function
+SET n=Harry
+ECHO My name is %n%
+PAUSE
+EXIT /B 0
+Output
+
+Note that the EXIT /B %ERRORLEVEL% is used to separate the function from the main program and PAUSE is used to hold the screen, else output console will vanish within nanoseconds.
+
+Batch file functions basic output
+
+Batch file function example: Program demonstrating function with parameters
+@echo OFF
+CALL :param_function 20, 400
+EXIT /B %ERRORLEVEL% 
+:param_function
+ECHO The square of %~1 is %~2
+PAUSE
+EXIT /B 0
+Output
+
+batch file functions with parameter output
+
+Here tilde(~) sign is used to access the parameter’s value followed by the position of the parameter. Hence, ~1 is for accessing first parameter and ~2 for the second.
+
+Batch file function example: Program demonstrating function with return values
+@echo OFF
+CALL :retun_value_function ret_val1,ret_val2
+ECHO The square root of %ret_val1% is %ret_val2%
+PAUSE
+EXIT /B %ERRORLEVEL% 
+:return_value_function
+SET %~1=100
+SET %~2=10
+EXIT /B 0
+Output
+
+batch file function return value output
+
+Here SET command along with tilde(~) sign is used to set the return values depending on the position followed by tilde sign.
+
+=== SHUTDOWN
+How to shutdown computer using cmd/batch file?
+The command used to shut down computer is
+
+shutdown /s /f /t 0
+Shut down computer using cmd
+Follow these steps to shut down the computer using cmd.
+
+Run the command prompt
+Type the above command and hit enter
+shutdown computer using cmd
+
+The computer will shut down immediately after hitting this command.
+
+Shutdown computer using a batch file
+Here are the steps to shut down a computer using a batch file.
+
+Open a notepad and click on new file
+Paste the shutdown code stated above and save the file as turn_off.bat
+shutdown computer using batch file
+
+Once you have saved the file, click on the .bat file and your computer will start shutting down.
+Alternately the following code can be used for immediate shutdown.
+
+SHUTDOWN /p
+How to shutdown the computer by setting time using cmd/batch?
+The code we stated above is used to shut down the computer immediately after hitting the code. We have to use the following command to set the timing for shutting down.
+
+For example, the following code is used to shut down a computer in 60 seconds.
+
+SHUTDOWN /s /t 60 /c
+How to log off a computer using batch/cmd?
+Logging off means signing out of from the current logged in account. Here is the code to log off or sign out.
+
+SHUTDOWN /l
+where l signifies shortcut command for logging off.
+
+How to hibernate a computer using batch/cmd?
+Hibernating is same as shutting down but when you hibernate your computer, it stores and remembers the previous state of the computer before hibernating and it will resume from there.
+
+Here is the code to hibernate a computer.
+
+SHUTDOWN /h
+ 
+
+ 
+How to reboot a computer using batch/cmd?
+Here is the code required to reboot a computer, be it from command prompt or batch file.
+
+Here is the code to reboot a computer.
+
+SHUTDOWN -r -t 10
+This is the code to reboot the computer in 10 seconds.
+
+Batch file program to shutdown, reboot, hibernate, and logoff the computer
+Let’s take an example where the user will be asked to enter an option whether to logoff or reboot or hibernate or to shutdown the computer.
+
+Here is the source code.
+
+@echo OFF
+
+ECHO "Choose an option .."
+ECHO "1 = Logoff"
+ECHO "2 = Reboot"
+ECHO "3 = Hibernate"
+ECHO "4 = Shutdown"
+
+SET /p option=Choose one option-
+
+IF %option%==1 SHUTDOWN /l
+IF %option%==2 SHUTDOWN -r -t 10
+IF %option%==3 SHUTDOWN /h
+IF %option%==4 SHUTDOWN /s /f /t 0
+
+PAUSE
+Save this as .bat file and double click on it to run. The output console will be like the following.
+
+batch file program to shutdown
+
+Now depending on the option you choose the computer will be either shut down, logoff, hibernate or reboot.
+
+===NET
+
+Batch file NET command: Introduction
+NET USER command: Introduction
+Adding new user account
+Changing password of the user account
+Deleting user account
+Viewing information of user account
+Assigning admin rights
+Starting & Stopping services
+batch file network commands: net
+
+Batch file NET commands are used to manage and troubleshoot any aspect of the network with lot more exciting features.
+
+For those who are not familiar with command line and batch file, we will guide you through every aspect of net command.
+
+Batch file: NET command
+We can use NET commands for managing our network as well as troubleshooting locally and remotely in any network.
+
+There are 21 sub-commands with its own switches.
+
+Don’t panic we will explain each and every command.
+
+Syntax of net command:
+
+NET [ACCOUNTS | COMPUTER | CONFIG | CONTINUE | FILE | GROUP |
+     HELP | LOCALGROUP | PAUSE | SESSION | SHARE | START |
+     STATISTICS | STOP | TIME | USE | USER | VIEW ]
+net command
+
+If you are new to this command, then NET HELP command explains different types of names and syntax of NET command as follow:
+
+net help command
+
+Now let’s take a look at one of the interesting NET subcommand i.e. USER
+
+Batch file command: NET USER
+NET USER command is used for viewing, creating, deleting and setting the password for an existing or newly created accounts in windows.
+
+For this, we should run command line with administrative privileges.
+Syntax of NET USER command:
+
+C:\> NET USER
+This command will display all the users in you local machine.
+
+The NET command with USER or USERS will perform the same operation.
+
+
+ 
+As seen in the above picture, there are five different users on my local machine i.e.
+
+'Administrator', 'DefaultAccount', 'Guest', 'ICT' and WDAGUtilityAccount'
+The Administrator and Guest are default accounts created when we install an operating system.
+
+Administrator user has admin rights whereas Guest belongs to the same category with fewer privileges.
+
+I created ICT account when installing windows.
+
+Other accounts were created by the operating system for different purposes such as remote access, troubleshooting, and updates.
+
+Adding the new user using a command line and Batch file.
+So let’s have some fun using NET subcommand USER along with the '/add'.
+
+C:\> NET USER "username" "password" /add
+where,
+
+username = new username you want to add
+
+password = password for the new username
+
+Let’s run the command:
+
+adding new user using net user command
+
+As we can see in the above picture, we have created a new account named tech_user with pass as a password.
+
+This tech_user have normal privileges and restricted from installing new software and access to restricted folders.
+
+This can be done using the batch file as follow:
+
+@echo off
+net user tech_user pass /add
+Write the above code in notepad and save it with .bat extension. Run the saved file using administrator rights the new user will be created in your computer.
+
+Changing password of the newly created account using command line
+C:\> NET USER tech_user *
+Type a password for the user:
+Retype the password to confirm:
+Type new password, confirm it and see the result.
+
+changing password using command line
+
+The above code will change the password.
+
+Changing password of user account using batch file
+@echo off
+net user tech_user *
+If you run this file, it will ask for new password.
+
+Deleting user account using command line
+We can also delete the user account using NET USER command with ‘/delete’.
+
+Syntax
+
+C:\> NET USER user_name /delete
+Let’s run this syntax in command line
+
+net user delete command
+
+Now we can see that tech_user account has been successfully removed from the computer.
+
+Batch file syntax for deleting user account
+@echo off
+net user tech_user /delete
+What if you want to see detailed information about a specific user?
+
+For this, we have following syntax
+
+C:\> NET USER user_name
+This command will display account information, password last set, password expiry, whether the user has right to change the password and other information.
+
+viewing account information in command line
+
+Assigning administrator rights to the user account
+As said earlier, by default newly created account doesn’t have administrator privileges.
+
+However, we can assign administrator rights to the accounts using the command line.
+
+For this, we have to use localgroup subcommand.
+
+C:\> net localgroup administrators tech_user /add
+net localgroup command
+
+Now, I have assigned tech_user account to the administrator group which means it now has administrator privileges.
+
+Again for deleting the user, we have to use the above mentioned /delete command.
+
+Starting and stopping specific services supported by computer using the command line
+There are various services running on the computer which can be viewed from services.msc.
+
+Let’s try to start and then stop print spooler service using the command line.
+
+Syntax
+
+C:\> net start service_name
+C:\> net stop service_name
+where,
+
+service_name = specific service name
+
+Starting print spooler service
