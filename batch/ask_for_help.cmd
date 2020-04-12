@@ -1,0 +1,4 @@
+for /?
+if  /?
+color /?
+cd /?
