@@ -3,3 +3,7 @@ l1.txt
 *.docx 
 *.doc
 *.pdf
+*.o
+*.a
+*.nm
+*.temp
