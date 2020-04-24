@@ -1,0 +1,20 @@
+#please try C:\Program Files (x86)\CodeBlocks\MinGW\bin
+#or use make in VS code bash terminal (mingw bash)/cygwin bash 
+#.PHONY all 
+.PHONY: all clean
+SRCS_C	:= example.c
+OBJECTS	:=$(SRCS_C:.c=.o)
+
+all: main_normal
+
+
+main_sections:
+	gcc -ffunction-sections -fdata-sections -c $(SRCS_C)
+	gcc -Wl,--gc-sections -o $@ $(OBJECTS)
+
+main_normal:
+	gcc -c $(SRCS_C)
+	gcc -o $@ $(OBJECTS)
+
+clean:
+	rm -rf *.o main_sections main_normal
