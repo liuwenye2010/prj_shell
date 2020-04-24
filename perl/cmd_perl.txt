@@ -1,0 +1,28 @@
+
+//(1)
+convert one perl file to exe  
+https://stackoverflow.com/questions/2948405/how-to-compile-a-perl-script-to-a-windows-executable-with-strawberry-perl
+
+> perl -MCPAN -e "install PAR::Packer" 
+## FAIL both with Activeperl and Starberryperl , should work with specific version perl or build in our local computer , so forget it 
+
+//(2) 
+covert exe  to get back perl file -->  just rename the .exe to zip file in windows platform 
+
+
+//(3)REPL perl /interactive mode  ==>  perl -d -e 1
+
+or usding debug mode 
+perl -de1      (lwy perfer to use )
+
+or usging perli 
+npm install -g perli   
+>perli    (lwy prefer to use )
+
+or 
+
+###perl -MCPAN -e "install Devel::REPL"   
+
+
+//(4)perl help for buidlin functions  == go to official help   ,e.g  chr 
+https://perldoc.perl.org/5.30.0/functions/chr.html
