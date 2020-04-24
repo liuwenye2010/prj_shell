@@ -1,2 +1,5 @@
 *.bat
 l1.txt
+*.docx 
+*.doc
+*.pdf
