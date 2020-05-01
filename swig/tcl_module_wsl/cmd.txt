@@ -1,0 +1,23 @@
+http://swig.org/tutorial.html
+
+
+Building a Tcl module
+At the UNIX prompt, type the following (shown for Linux, see the SWIG Wiki Shared Libraries FAQ page for help with other operating systems):
+ unix % swig -tcl example.i
+ unix % gcc -fpic -c example.c example_wrap.c \
+        -I/usr/local/include 
+ unix % gcc -shared example.o example_wrap.o -o example.so
+ unix % tclsh
+ % load ./example.so example
+ % puts $My_variable
+ 3.0
+ % fact 5
+ 120
+ % my_mod 7 3
+ 1
+ % get_time
+ Sun Feb 11 23:01:07 2018
+ 
+ % 
+ 
+The swig command produces a file example_wrap.c that should be compiled and linked with the rest of the program. In this case, we have built a dynamically loadable extension that can be loaded into the Tcl interpreter using the 'load' command.
