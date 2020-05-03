@@ -1,0 +1,7 @@
+go run hello.go 
+
+go build hello.go  
+./hello
+
+go run eight_queens.go
+go build eight_queens.go
