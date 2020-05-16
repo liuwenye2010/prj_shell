@@ -1,0 +1,6 @@
+npm install lodash 
+npm install nodemon 
+
+nodemon ./demo.s
+
+npm init --yes # create one dependece project , then can use npm install for others to install all depencency 
